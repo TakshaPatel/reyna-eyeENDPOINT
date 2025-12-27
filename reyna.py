@@ -35,7 +35,7 @@ banner = """
      \033[1;37m╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚══════╝╚═╝ ╚═════╝ """
 print(" ")
 print(banner)
-print("    " + R + "[" + B + "Twitter" + R + "]" + Y + ":" + G + "[" + R + "@K0WSHIK" + G + "]" + "  " + R + "[" + B + "Github" + R + "]" + Y + ":" + G + "[" + R + "naimkowshik" + G + "]" + "  " + R + "[" + B + "website" + R + "]" + Y + ":" + G + "[" + R + "No Website" + G + "]" + RS)
+print(" ")
 def yesornot():
     yes_Or_Not = input("\n" + B + "Scanning Complete. " + Y + "Press " + G + "Enter To Continue " + W + "OR " + R + "CTRL + C To Stop" + RS)
     if yes_Or_Not == '':
