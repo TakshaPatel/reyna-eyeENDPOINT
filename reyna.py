@@ -48,17 +48,19 @@ no_www_https_or_https = G + "Example" + R + ": " + G + "example.com"
 def mainMenu():
     print("     ")
     print("    "+W+"["+G+"+"+W+"] " + Y + "Options " + W + ":" + RS + "                                  "+W+"["+G+"+"+W+"]" + Y + " Nmap Scanner Options " + W + ":" + RS)
-    print("     "+W+"└["+R+"•"+W+"]"+G+" 1."+W+" IP Address information" + "                 "+W+"└["+R+"•"+W+"]"+G+" 11."+W+" Nmap Target Selection" + RS)
-    print("     " + W + "└[" + Y + "•" + W + "]" + G + " 2." + W + " Who Is Domain Scan" + "                     " + W + "└["+Y+"•"+W+"]"+G+" 12."+W+" Nmap Port Selection All Port Scan" + RS)
-    print("     " + W + "└[" + B + "•" + W + "]" + G + " 3." + W + " Robot Txt Scan" + "                         " + W + "└["+B+"•"+W+"]"+G+" 13."+W+" Nmap Port Scan TCP, TCP SYN, UDP, ignore discovery" + RS)
-    print("     " + W + "└[" + G + "•" + W + "]" + G + " 4." + W + " HTTP Header Grabber" + "                    " + W + "└["+G+"•"+W+"]"+G+" 14."+W+" Nmap Service and OS Detection All Os Scanner One tools" + RS)
+    print("     "+W+"└["+R+"•"+W+"]"+G+" 1."+W+" IP Address information" + "                 "+W+"└["+R+"•"+W+"]"+G+" 12."+W+" Nmap Target Selection" + RS)
+    print("     " + W + "└[" + Y + "•" + W + "]" + G + " 2." + W + " Who Is Domain Scan" + "                     " + W + "└["+Y+"•"+W+"]"+G+" 13."+W+" Nmap Port Selection All Port Scan" + RS)
+    print("     " + W + "└[" + B + "•" + W + "]" + G + " 3." + W + " Robot Txt Scan" + "                         " + W + "└["+B+"•"+W+"]"+G+" 14."+W+" Nmap Port Scan TCP, TCP SYN, UDP, ignore discovery" + RS)
+    print("     " + W + "└[" + G + "•" + W + "]" + G + " 4." + W + " HTTP Header Grabber" + "                    " + W + "└["+G+"•"+W+"]"+G+" 15."+W+" Nmap Service and OS Detection All Os Scanner One tools" + RS)
     print("     " + W + "└[" + R + "•" + W + "]" + G + " 5." + W + " Dns Map")
     print("     " + W + "└[" + Y + "•" + W + "]" + G + " 6." + W + " DNS Recon And Enumerating SRV Records" + RS + " "+W+"["+G+"+"+W+"] " + Y + "Nmap " + R + "Vulnerability " + Y + "And " + R + "Script " + Y + "Scanning Options " + W +  ":" + RS)
-    print("     " + W + "└[" + B + "•" + W + "]" + G + " 7." + W + " Clickjacking Test" + "                      " + W + "└["+R+"•"+W+"]"+G+" 15."+W+" Nmap " + G + "vulners " + W + "And" + G + " vulscan" + W + " Scanner" + RS)
-    print("     " + W + "└[" + G + "•" + W + "]" + G + " 8." + W + " Website WhatWeb Scan " + "                  " + W + "└["+B+"•"+W+"]"+G+" 16."+W+" Nmap " + W + "address-info " + G + "IPv6" + Y + "," + G + "MAC " + Y + "or " + G + "IPv4" + RS)
-    print("     " + W + "└[" + R + "•" + W + "]" + G + " 9." + W + " Link Grabber " + "                          " + W + "└["+Y+"•"+W+"]"+G+" 17."+W+" Nmap " + W + "Target Single " + G + "PORT " + W + "Scan" + RS)
-    print("     " + W + "└[" + Y + "•" + W + "]" + G + " 10." + W + " Scan Website Traceroute " + "              " + W + "└["+Y+"•"+W+"]"+G+" 18."+W+" Nmap " + W + "Http Cross Domain " + G + "Policy" + RS)
+    print("     " + W + "└[" + B + "•" + W + "]" + G + " 7." + W + " Clickjacking Test" + "                      " + W + "└["+R+"•"+W+"]"+G+" 16."+W+" Nmap " + G + "vulners " + W + "And" + G + " vulscan" + W + " Scanner" + RS)
+    print("     " + W + "└[" + G + "•" + W + "]" + G + " 8." + W + " Website WhatWeb Scan " + "                  " + W + "└["+B+"•"+W+"]"+G+" 17."+W+" Nmap " + W + "address-info " + G + "IPv6" + Y + "," + G + "MAC " + Y + "or " + G + "IPv4" + RS)
+    print("     " + W + "└[" + R + "•" + W + "]" + G + " 9." + W + " Link Grabber " + "                          " + W + "└["+Y+"•"+W+"]"+G+" 18."+W+" Nmap " + W + "Target Single " + G + "PORT " + W + "Scan" + RS)
+    print("     " + W + "└[" + Y + "•" + W + "]" + G + " 10." + W + " Scan Website Traceroute " + "              " + W + "└["+Y+"•"+W+"]"+G+" 19."+W+" Nmap " + W + "Http Cross Domain " + G + "Policy" + RS)
+    print("     " + W + "└[" + B + "•" + W + "]" + G + " 11." + W + " JavaScript Endpoint Detection" + RS)
     print(" ")
+
     choice = int(input("\n"+W+"     ┌["+G+"+"+W+"]Choose the options\n"+W+"     └["+R+"root"+W+"@"+W+G+"reyna"+W+"]:~# "))
     if choice == 1:
         from modules import ipscan
@@ -101,37 +103,44 @@ def mainMenu():
         print(traceroute)
         yesornot()
     elif choice == 11:
+        from modules import JSEndpoint
+        print(JSEndpoint)
+        yesornot()
+    elif choice == 12:
         from modules import NmapTargetSelection
         print(NmapTargetSelection)
         yesornot()
-    elif choice == 12:
+    elif choice == 13:
         from modules import NmapPortSelection
         print(NmapPortSelection)
         yesornot()
-    elif choice == 13:
+    elif choice == 14:
         from modules import Nmap_Port_Scan_types
         print(Nmap_Port_Scan_types)
         yesornot()
-    elif choice == 14:
+    elif choice == 15:
         from modules import Service_and_OS_Detection
         print(Service_and_OS_Detection)
         yesornot()
-    elif choice == 15:
+    elif choice == 16:
         from modules.nmap_script import vulners_vulscan
         print(vulners_vulscan)
         yesornot()
-    elif choice == 16:
+    elif choice == 17:
         from modules.nmap_script import address_info
         print(address_info)
         yesornot()
-    elif choice == 17:
+    elif choice == 18:
         from modules.nmap_script import target_port_scan
         print(target_port_scan)
         yesornot()
-    elif choice == 18:
+    elif choice == 19:
         from modules.nmap_script import http_cross_domain_policy
         print(http_cross_domain_policy)
         yesornot()
+    
+    
+
 
 
 
